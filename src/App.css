@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  padding: 0;
+  margin: 0; 
+  font-family: 'Inter', sans-serif;
+  color: #fff
+}
+
+#root {
+  max-width: 1280px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.container {
+  background-color: #333;
+  border: 2px solid #dddddd;
+  border-radius: 1em;
+  padding: 2em 3em
+}
+.container h1 {
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+.mensagem {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #333;
+  padding: 1em 2em;
+  border-radius: .7em;
+  margin: 1em;
+}
+.mensagem span {
+  color: #fff;
+}
+
+input {
+  width: 100%;
+  max-width: 220px;
+  padding: 12px;
+  color: #333;
+  border-radius: 12px;
+  border: 1.5px solid lightgrey;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+input:active {
+  transform: scale(0.95);
+}
+
+.loader {
+  display: block;
+  --height-of-loader: 5px;
+  width: 100%;
+  height: var(--height-of-loader);
+  border-radius: 30px;
+  background-color: rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.loader::before {
+  content: "";
+  position: absolute;
+  background: #888;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  border-radius: 30px;
+  animation: moving 5s ease-in-out infinite;
+  ;
+}
+
+@keyframes moving {
+  50% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0;
+    right: 0;
+    left: unset;
+  }
+}
+.content {
+  display: flex;
+  gap: 1em;
+  flex-direction: column;
+  margin-top: 2em;
+}
+.cidade-estado {
+  font-weight: 600
+}
